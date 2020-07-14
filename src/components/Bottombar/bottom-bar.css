@@ -1,0 +1,41 @@
+@import url(../../root.css);
+
+.bottom-bar {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    background-color: var(--primary);
+}
+
+.bottom-bar div {
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-column: span 1;
+    vertical-align: middle;
+}
+
+.bottom-bar .links div {
+    display: inline-block;
+    padding: 10px;
+    padding-top: 15px;
+}
+
+.bottom-bar .socials {
+    color: white;
+    text-align: right;
+    font-size: 30px;
+    padding-right: 20px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+@media (max-width: 760px) {
+    .bottom-bar .links div {
+        display: block;
+    }
+}

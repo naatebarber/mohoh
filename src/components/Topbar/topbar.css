@@ -1,0 +1,54 @@
+@import url(../../root.css);
+
+.topbar {
+    width: calc(100% - 6px);
+    position: relative;
+    height: 90px;
+    background-color: var(--accent);
+    text-align: center;
+    border: white 3px solid;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #ddd;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    margin-bottom: 130px;
+}
+
+.logo {
+    top: 20px;
+    width: 100%;
+    min-height: 90px;
+    background-color: var(--accent);
+    text-align: center;
+    border: white 3px solid;
+    box-shadow: 0px 0px 8px #ddd;
+    border-radius: 5px;
+    grid-column: 4 / span 1;
+    position: absolute;
+    max-width: 200px;
+}
+
+.cart-icon {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    grid-column: 7 / span 1;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media (max-width: 760px) {
+    .topbar {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .logo {
+        grid-column: 2 / span 1;
+    }
+}

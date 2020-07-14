@@ -1,0 +1,73 @@
+@import url(../../root.css);
+
+.cart {
+    text-align: center;
+    width: 100%;
+}
+
+.cart .items {
+    width: 60vw;
+    position: relative;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.cart .item {
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #ccc;
+    position: relative;
+    gap: 15px;
+    padding: 15px;
+    grid-template-columns: repeat(3, auto);
+    display: grid;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cart .item img {
+    height: 100px;
+    grid-column: span 1;
+    align-content: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ddd;
+}
+
+.cart .item .title {
+    font-size: 20px;
+    color: var(--accent-2);
+    grid-column: span 1;
+    font-weight: bold;
+    max-height: 100px;
+}
+
+.cart .item .price {
+    font-size: 16px;
+    grid-column: span 1;
+    font-weight: 700;
+    color: white;
+    background-color: #dedede;
+    box-shadow: 0px 0px 3px #ddd;
+    border-radius: 5px;;
+    padding: 5px;
+}
+
+.cart .item .remove {
+    padding-left: 20px;
+    cursor: pointer;
+    color: red;
+    user-select: none;
+    font-size: 20px;
+}
+
+@media (max-width: 760px) {
+    .cart .items {
+        width: 95vw;
+    }
+
+    .cart .items .item .title {
+        font-size: 16px;
+    }
+}

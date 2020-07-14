@@ -1,0 +1,98 @@
+@import url(../../root.css);
+
+.portfolio {
+    text-align: center;
+}
+
+.grid {
+    position: relative;
+    padding: 50px;
+}
+
+.portfolio-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #ccc;
+    margin: 20px;
+    display: inline-block;
+    margin: 20px;
+    transition: all 150ms ease-in;
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+
+.portfolio-card:hover {
+    opacity: 0.8;
+    box-shadow: 0px 0px 6px #aaa;
+}
+
+.portfolio-card img {
+    height: 300px;
+}
+
+.backdrop {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+.backdrop .background {
+    height: 100%;
+    width: 100%;
+    background-color: #2a2a2a;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.backdrop .panel {
+    width: 60vw;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #ccc;
+    margin: auto;
+    margin-top: 10vh;
+    transition: all 150ms ease-in;
+    position: relative;
+    max-height: 80vh;
+    overflow: scroll;
+    user-select: none;
+}
+
+.backdrop .panel img {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.backdrop .panel .text {
+    padding: 40px;
+    text-align: left;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+@media (max-width: 760px) {
+    .portfolio-card {
+        height: 180px;
+    }
+
+    .portfolio-card img {
+        height: 180px;
+    }
+
+    .backdrop .panel {
+        width: 90vw;
+    }
+
+    .backdrop .panel img {
+        max-height: none;
+    }
+}

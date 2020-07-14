@@ -1,0 +1,110 @@
+:root {
+    --primary: #2a2a2a;
+    --accent: #afeeee;
+    --accent-2: #9CE2B3;
+}
+
+body {
+    font-family: "Source Sans Pro";
+    padding-bottom: 200px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.columns {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex: 1 1 300px;
+    flex-direction: row;
+}
+
+.header {
+    font-family: "Playfair Display";
+    font-size: 45px;
+    line-height: 55px;
+    color: #2a2a2a;
+    padding-top: 50px;
+    text-shadow: 8px 8px 0px var(--accent-2);
+    padding-bottom: 50px;
+}
+
+input {
+    background-color: #efefef;
+    border: none;
+    border-bottom: 2px var(--accent-2) solid;
+    font-family: "Source Sans Pro";
+    color: var(--primary);
+    transition: all 150ms ease-in;
+    box-shadow: 0px 0px 5px #ddd;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+}
+
+input:focus {
+    border-bottom: 2px var(--accent) solid;
+    box-shadow: 0px 0px 3px #aaa;
+}
+
+textarea {
+    background-color: #efefef;
+    border: none;
+    border-bottom: 2px var(--accent-2) solid;
+    font-family: "Source Sans Pro";
+    color: var(--primary);
+    transition: all 150ms ease-in;
+    box-shadow: 0px 0px 5px #ddd;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    width: 400px;
+    height: 200px;
+    resize: none;
+}
+
+textarea:focus {
+    border-bottom: 2px var(--accent) solid;
+    box-shadow: 0px 0px 3px #aaa;
+}
+
+button {
+    padding: 10px;
+    font-size: 20px;
+    background-color: var(--accent-2);
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px #ddd;
+    color: white;
+    font-family: "Source Sans Pro";
+    transition: all 150ms ease-in;
+    border: white 2px solid;
+    cursor: pointer;
+    user-select: none;
+}
+
+button:hover {
+    opacity: 0.8;
+    box-shadow: 0px 0px 3px #aaa;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 760px) {
+    .rows {
+        grid-template-columns: repeat(1);
+    }
+
+    .header {
+        font-size: 35px;
+        line-height: 45px;
+    }
+}

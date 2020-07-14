@@ -1,0 +1,10 @@
+@import url(../../root.css);
+
+.contact {
+    text-align: center;
+}
+
+.contact .arrow {
+    font-size: 30px;
+    color: var(--accent-2);
+}
