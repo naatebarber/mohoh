@@ -3,6 +3,7 @@
 .cart {
     text-align: center;
     width: 100%;
+    animation: fadeIn 0.3s ease-in
 }
 
 .cart .items {
@@ -41,6 +42,7 @@
     grid-column: span 1;
     font-weight: bold;
     max-height: 100px;
+    text-align: left;
 }
 
 .cart .item .price {

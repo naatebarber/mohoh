@@ -1,8 +1,37 @@
 @import url(../../root.css);
 
-/* .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    position: relative;
-} */
+.home {
+    animation: fadeIn 0.3s ease-in;
+    text-align: center;
+}
 
+.home .wrapper {
+    position: relative;
+    white-space: nowrap;
+}
+
+.home .wrapper .column {
+    display: inline-block;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 300px;
+    text-align: center;
+    vertical-align: top;
+    white-space: normal;
+}
+
+.home .wrapper .column .card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+    .home .wrapper {
+        white-space: normal;
+    }
+    
+    .home .wrapper .column { 
+        width: calc(100vw - 20px);
+    }
+}

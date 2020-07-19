@@ -13,15 +13,22 @@ class Topbar extends Component {
     }
 
     render() {
-        let { content } = this.props;
+        let { content, showCart } = this.props;
         if( content == undefined ) return <div></div>
+
+        content = content.filter(e => e.fields.slug == "TopBar")[0]
 
         return (
             <div className="topbar">
                 <img className="logo" src={content.fields.logo.fields.file.url} />
-                <div className="cart-icon">
-                    <Link to="/cart"><FiShoppingCart /></Link>
-                </div>
+                {
+                    showCart
+                        ?   <div className="cart-icon">
+                                <Link to="/cart"><FiShoppingCart /></Link>
+                            </div>
+                        : null
+                }
+                    
             </div>
         )
     }
@@ -29,6 +36,6 @@ class Topbar extends Component {
 
 export default compose(
     connect(
-        state => ({ content: state.content ? state.content.filter(e => e.fields.slug == "TopBar")[0] : undefined })
+        state => ({ content: state.content, showCart: state.showCart })
     )
 )(Topbar)

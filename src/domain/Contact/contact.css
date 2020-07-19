@@ -2,6 +2,7 @@
 
 .contact {
     text-align: center;
+    animation: fadeIn 0.3s ease-in
 }
 
 .contact .arrow {

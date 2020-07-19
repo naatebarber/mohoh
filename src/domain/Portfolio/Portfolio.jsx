@@ -15,7 +15,7 @@ class Portfolio extends Component {
         }
     }
     render() {
-        let { content, cart } = this.props
+        let { content, cart, showCart } = this.props
         if( content == undefined ) return <div></div>
 
         let text = content.filter(e => e.fields.slug == "Portfolio")[0]
@@ -32,32 +32,34 @@ class Portfolio extends Component {
                             <div className="panel">
                                 <img src={this.state.selected.fields.image.fields.file.url} />
                                 <div className="text">{this.state.selected.fields.description}</div>
-                                <button
-                                    onClick={() => {
-                                        if(cart == undefined) {
-                                            cart = []
-                                        }
-
-                                        cart.push({
-                                            image: this.state.selected.fields.image.fields.file.url,
-                                            title: this.state.selected.fields.header,
-                                            price: this.state.selected.fields.price
-                                        })
-
-                                        this.props.dispatch({
-                                            type: "UPDATE_CART",
-                                            data: cart
-                                        })
-
-                                        this.setState({
-                                            backdrop: false,
-                                        })
-                                    }}
-                                >
-                                    Add To Cart ( ${this.state.selected.fields.price} )
-                                </button>
-                                <br></br>
-                                <br></br>
+                                {
+                                    showCart
+                                        ?   <button
+                                                onClick={() => {
+                                                    if(cart == undefined) {
+                                                        cart = []
+                                                    }
+            
+                                                    cart.push({
+                                                        image: this.state.selected.fields.image.fields.file.url,
+                                                        title: this.state.selected.fields.header,
+                                                        price: this.state.selected.fields.price
+                                                    })
+            
+                                                    this.props.dispatch({
+                                                        type: "UPDATE_CART",
+                                                        data: cart
+                                                    })
+            
+                                                    this.setState({
+                                                        backdrop: false,
+                                                    })
+                                                }}
+                                            >
+                                                Add To Cart ( ${this.state.selected.fields.price} )
+                                            </button>
+                                        :   null
+                                }
                             </div>
                         </div>
                     :   null
@@ -89,6 +91,6 @@ class Portfolio extends Component {
 
 export default connect(
     compose(
-        state => ({ content: state.content, cart: state.cart })
+        state => ({ content: state.content, cart: state.cart, showCart: state.showCart })
     )
 )(Portfolio)

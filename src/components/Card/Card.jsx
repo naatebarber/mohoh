@@ -8,11 +8,11 @@ export default class Card extends Component {
     }
 
     render() {
-        let { content } = this.props
+        let { content, style } = this.props
         if( content == undefined ) return <div></div>
 
         return (
-            <div className="card">
+            <div className="card" style={style}>
                 { content.fields.image 
                     ? <div><img src={content.fields.image.fields.file.url} /></div> 
                     : <div></div> }

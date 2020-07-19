@@ -37,14 +37,14 @@ class App extends Component {
             <div className="root">
                 <Provider store={store}>
                     <BrowserRouter>
+                        <BottomBar />
                         <Topbar />
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/contact" component={Contact} />
                             <Route exact path="/portfolio" component={Portfolio} />
-                            <Route exact path="/cart" component={Cart} />
+                            {/* <Route exact path="/cart" component={Cart} /> */}
                         </Switch> 
-                        <BottomBar />
                     </BrowserRouter>
                 </Provider>
             </div>

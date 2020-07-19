@@ -12,16 +12,27 @@ class Home extends Component {
         if( content == undefined ) return <div></div>
 
         let cards = content.filter(e => e.fields.slug == "HomeCard")
-        cards = cards.sort((a, b) => a.fields.priority - b.fields.priority)
 
         return (
             <div className="home">
                 <div className="title"></div>
                 <div className="subtitle"></div>
-                <div className="columns">
-                    {
-                        cards.map(e => <div className="item"><Card content={e} /></div>)
-                    }
+                <div className="wrapper">
+                    <div className="column">
+                        {
+                            cards.filter(e => e.fields.columnNumber == 1).reverse().map(e => <Card content={e} style={{ width: "100%" }} />)
+                        }
+                    </div>
+                    <div className="column">
+                        {
+                            cards.filter(e => e.fields.columnNumber == 2).reverse().map(e => <Card content={e} style={{ width: "100%" }} />)
+                        }
+                    </div>
+                    <div className="column">
+                        {
+                            cards.filter(e => e.fields.columnNumber == 3).reverse().map(e => <Card content={e} style={{ width: "100%" }} />)
+                        }
+                    </div>
                 </div>
             </div>
         )
